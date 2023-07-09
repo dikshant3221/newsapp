@@ -1,0 +1,29 @@
+.parent {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    margin-top: 40px;
+    overflow: auto;
+    flex-wrap: wrap;
+  }
+  
+  .image img {
+    border-radius: 30px;
+    width: 240px;
+    height: 175px;
+    object-fit: cover;
+  }
+  
+  .details {
+    width: 200px;
+    text-align: left;
+    margin-left: 15px;
+    font-weight: 550;
+    color: #3c3d3cfb;
+  }
+  
+  #time {
+    color: #595a59fb;
+    font-weight: 500;
+    width: 100%;
+  }
