@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+News App
+This is a React-based web application that fetches and displays images from an API.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Installation
+Clone the repository:
+git clone <repository_url>
 
-## Available Scripts
+Install the dependencies:
+npm install
 
-In the project directory, you can run:
+Start the server:
 
-### `npm start`
+node server.js
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This will start the backend server that provides the image data through the API.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Start the React application:
 
-### `npm test`
+npm run start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This will start the frontend development server and open the application in your default browser.
 
-### `npm run build`
+Note: Make sure the backend server is running on http://localhost:4001 or update the API endpoint in the code accordingly.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Interact with the application:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application will display a list of images with their titles and timestamps.
+Scroll through the images using the scroll bar on the right side.
+Click the "NextPage" button to load the next set of images.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Customization
+API Endpoint: If you want to change the API endpoint, update the URL in the axios.get call within the fetchData function in FetchImageApi.js file.
+Styling: Customize the visual appearance of the application by modifying the CSS in the fetchImage.css file.
 
-### `npm run eject`
+Dependencies
+React: JavaScript library for building user interfaces.
+Axios: Promise-based HTTP client for making API requests.
+Node.js: JavaScript runtime for executing server-side code.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+License
+This project is licensed under the MIT License.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to customize and modify the code as per your requirements. Contributions are welcome!
