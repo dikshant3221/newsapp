@@ -3,10 +3,13 @@ This is a React-based web application that fetches and displays images from an A
 
 Installation
 Clone the repository:
-git clone <repository_url>
+git clone https://github.com/dikshant3221/newsapp.git
 
 Install the dependencies:
-npm install
+npm install axios
+npm install node-fetch
+npm install express   
+npm install fs     
 
 Start the server:
 
