@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #441866;
+  }
+  
+  .logo img {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    transform:translate(60%,0%);
+  }
+  

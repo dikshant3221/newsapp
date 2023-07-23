@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './fetchImage.css';
-import ImageModal from './ImageModal';
+import ImageModal from '../ImageModal/ImageModal';
 
-const FetchImageApi = () => {
+const FetchImageApi = ({ setImage }) => {
   const [data, setData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -12,7 +12,7 @@ const FetchImageApi = () => {
     const currentDate = new Date();
     const year = currentDate.getFullYear();
     const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-    const day = String(currentDate.getDate()).padStart(2, '0') -1;
+    const day = String(currentDate.getDate()).padStart(2, '0') - 1;
     return `${year}-${month}-${day}`;
   }
 
@@ -28,7 +28,7 @@ const FetchImageApi = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = "https://newsapi.org/v2/everything?q=all&from=" + getCurrentDate()+"&sortBy=publishedAt&apiKey=958ed184d27145a6bf679c6a8bceee9f"
+        const url = "https://newsapi.org/v2/everything?q=all&from=" + getCurrentDate() + "&sortBy=publishedAt&apiKey=958ed184d27145a6bf679c6a8bceee9f"
         const response = await axios.get(url);
         const newItems = response.data.articles;
         setData((prevData) => [...prevData, ...newItems]);
@@ -48,29 +48,35 @@ const FetchImageApi = () => {
   return (
     <div>
       {selectedImage ? (
-        <ImageModal
-          image={selectedImage.urlToImage}
-          title={selectedImage.title}
-          content = {selectedImage.description}
-          url = {selectedImage.url}
-        />
+        <div>
+       
+          <ImageModal
+            image={selectedImage.urlToImage}
+            title={selectedImage.title}
+            content={selectedImage.description}
+            url={selectedImage.url}
+            setSelectedImage = {setSelectedImage}
+          />
+        </div>
+
+
       ) : (
         data.map((item) => (
           <div>
-          {item.urlToImage?
-            <div key={item.url} className="parent">
-            <div className="image">
-              <Link  onClick={() => handleImageClick(item)}>
-                <img src={item.urlToImage} alt={item.title} />
-              </Link>
-            </div>
-            <div className="details">
-              <h3 id="title">{truncateString(item.title)}</h3>
-              <h3 id="time">{item.publishedAt}</h3>
-            </div>
-          </div>:null}
+            {item.urlToImage ?
+              <div key={item.url} className="parent">
+                <div className="image">
+                  <Link onClick={() => handleImageClick(item)}>
+                    <img src={item.urlToImage} alt={item.title} />
+                  </Link>
+                </div>
+                <div className="details">
+                  <h3 id="title">{truncateString(item.title)}</h3>
+                  <h3 id="time">{item.publishedAt}</h3>
+                </div>
+              </div> : null}
           </div>
-         
+
         ))
       )}
     </div>
